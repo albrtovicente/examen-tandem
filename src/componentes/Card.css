@@ -4,25 +4,36 @@
     position: relative;
     display: inline-block;
     padding: 8px 20px;
-    background: black;
+    background: #5fb2e9;
     border-radius: 5px;
+    border: 1px solid black;
+    box-shadow: black;
     text-decoration: none;
     color: white;
     margin: 20px;
     margin-top: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: 400px;
 }
 
 .titulo{
     font-size: 24px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
+    color: #333333;
 }
 .texto{
     font-size: 16px;
     text-align: center;
-
+    color: #2d2d2d;
 }
 .boton{
     text-align: center;
+    border: none;
+    border-radius: 8px;
+
+}
+.boton:hover{
+    background-color: #E5F6FF;
 }

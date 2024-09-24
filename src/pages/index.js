@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import * as React from "react"
 import Card from "../componentes/Card"
+import './page.css'
 
 
 
@@ -13,14 +14,14 @@ const Inicio = () => {
       <div className="container">
         <h1 style={{textAlign: `center`}}>Inicio</h1> 
       <div >
-        <Link to="../contacto" style={{textAlign:`center`, fontSize:`34px`, textDecoration:`none`}}>
-          <p className="linkContacto">Contacto</p>
+        <Link to="../contacto" >
+          <p className="link">Contacto</p>
         </Link>
       </div>
-      <div className="cards" style={{textAlign:`center`}}>
+      <div className="cards">
         <Card 
           titulo="Gatsby"
-          imagen="../images/figma.jpg"
+          imagen="../images/gatsby.jpg"
           texto="dsvjdhbfbcscbhsb"
         />
         <Card
