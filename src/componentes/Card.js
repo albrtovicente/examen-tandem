@@ -1,9 +1,10 @@
 import React from "react";
 import "./Card.css";
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
 
 
-const Card =({imagen,  titulo, texto})=>{
+const Card =({imagen,  titulo, texto, link})=>{
     
     return(
         <>
@@ -11,13 +12,21 @@ const Card =({imagen,  titulo, texto})=>{
                 
                 <div>
                     <h1 className="titulo">{titulo}</h1>
-                    <StaticImage
+                    {/* <StaticImage
                       src ={imagen}
-                    />
-                    {/* <img className="imagen" src={imagen}></img> */}
+                    /> */}
+                    <GatsbyImage image={imagen}/> 
 
                     <p className="texto">{texto}</p>
-                    <button className="boton">+ Info</button>
+                    <button className="boton">
+                        <Link to={link} className="link">
+                        + Info
+                        </Link>
+                    </button>
+                    
+                     
+                     
+                     
                 </div>
             </div>
             

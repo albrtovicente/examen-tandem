@@ -19,6 +19,7 @@
 
 .titulo{
     font-size: 24px;
+    font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     color: #333333;
@@ -29,11 +30,21 @@
     color: #2d2d2d;
 }
 .boton{
-    text-align: center;
+    align-items: center;
     border: none;
     border-radius: 8px;
+    font-size: 24px;
+    width: 200px;
+    height: 50px;
 
 }
 .boton:hover{
     background-color: #E5F6FF;
+
+}
+.imagen{
+}
+.link{
+    text-decoration: none;
+    color: black;
 }

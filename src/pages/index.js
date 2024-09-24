@@ -1,46 +1,70 @@
-import { Link } from "gatsby"
-import * as React from "react"
+
+
+
+  import * as React from "react"
 import Card from "../componentes/Card"
-import './page.css'
+import { getImage } from 'gatsby-plugin-image';
+
+// import Layout from "../components/layout"
+
+import { graphql } from "gatsby"
 
 
 
-
-
-const Inicio = () => {
+const IndexPage = ({data}) => (
+  // <Layout>
+  <>
+  <h1>Inicio</h1>
+ 
   
-  return (
-    <>
-      <div className="container">
-        <h1 style={{textAlign: `center`}}>Inicio</h1> 
-      <div >
-        <Link to="../contacto" >
-          <p className="link">Contacto</p>
-        </Link>
-      </div>
-      <div className="cards">
-        <Card 
-          titulo="Gatsby"
-          imagen="../images/gatsby.jpg"
-          texto="dsvjdhbfbcscbhsb"
-        />
-        <Card
-          titulo="Gatsby"
-          imagen="../images/figma.jpg"
-          texto="dsvjdhbfbcscbhsb"
-        />
-        <Card
-          titulo="Gatsby"
-          imagen="../images/figma.jpg"
-          texto="dsvjdhbfbcscbhsb"
-        />
-      </div>
-      </div>
-        
-
+  <div className="card-container">
+      {data.allTecnologiasJson.edges.map(({ node }) => {
+        const image = getImage(node.image);
+        return (
+          
+            <Card 
+            texto={node.description} 
+            imagen={image} 
+            
+            titulo={node.title}
+            link={node.link}
+            ></Card>
+          
+        );
+      })}
+    </div>
     </>
-    
-  )
+  // </Layout>
+)
+
+export const query = graphql`
+ query {
+  allTecnologiasJson {
+    edges {
+      node {
+        id
+        link
+        title
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              placeholder: DOMINANT_COLOR
+              formats: WEBP
+              width: 300
+              aspectRatio: 1.77
+            )
+          }
+        }
+        description
+      }
+    }
+  }
 }
-  
-  export default Inicio
+`;
+
+
+
+export default IndexPage
+
+
+
