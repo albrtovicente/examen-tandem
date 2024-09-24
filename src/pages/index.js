@@ -17,7 +17,9 @@ const Inicio = () => {
            Contacto
          </Link>
          <Card
-            
+            titulo="Gatsby"
+            imagen="../images/figma.jpg"
+            texto="dsvjdhbfbcscbhsb"
          />
   
           

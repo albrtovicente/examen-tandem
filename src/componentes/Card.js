@@ -1,17 +1,18 @@
 import React from "react";
 import "./Card.css";
 
-const Card =({imagen,  titulo, text})=>{
+const Card =({imagen,  titulo, texto})=>{
     
     return(
         <>
-            <div style={{display:`flex`}}>
+            <div className="cardStyle">
+                
                 <div>
-                    {imagen} 
-                </div>
-                <div>
-                    <h1>{titulo}</h1>
-                    <p>{text}</p>
+                    <h1 className="titulo">{titulo}</h1>
+                    <img className="imagen" src={imagen}></img>
+
+                    <p className="texto">{texto}</p>
+                    <button className="boton">+ Info</button>
                 </div>
             </div>
             
